@@ -1,2 +1,1 @@
-Data Structures And Algorithms in c
-Data Structures And Algorithms in python
+Data Structures And Algorithms in c and python
