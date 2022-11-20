@@ -40,7 +40,7 @@ Status InitStack(LinkStack *S)
         S->top = (LinkStackPtr)malloc(sizeof(StackNode));
         if(!S->top)
                 return ERROR;
-        S->top->next=NULL;
+        S->top=NULL;
         S->count=0;
         return OK;
 }

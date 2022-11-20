@@ -179,13 +179,20 @@ void CreateALGraph(MGraph G,GraphAdjList *GL)
 	
 	for(i=0;i<G.numVertexes;i++) /* 建立边表 */
 	{ 
-		for(j=G.numVertexes-1;j>=0;j--) //此处倒序目的是为了与书中讲解图示一致
+		for(j=G.numVertexes-1;j>=0;j--)
 		{
 			if (G.arc[i][j]==1)
 			{
 				e=(EdgeNode *)malloc(sizeof(EdgeNode));
 				
-				e->adjvex=j;					/* 邻接序号为j */    
+				//下面6句代码仅仅只是为了与图书中的206页图匹配，让生成的队列符合书中图示。
+				//实际构建无需这样，只需理解当前就是构建一个图结构的邻接表即可
+				if (i==1 && j==8) 
+					e->adjvex=6;
+				else if (i==1 && j==6) 
+					e->adjvex=8;
+				else
+					e->adjvex=j;					/* 邻接序号为j */    
 
 				//正常代码下如下
 				//e->adjvex=j;					/* 邻接序号为j */   

@@ -178,7 +178,7 @@ void CriticalPath(GraphAdjList GL)
 	int i,gettop,k,j;    
 	int ete,lte;  /* 声明活动最早发生时间和最迟发生时间变量 */        
 	TopologicalSort(GL);   /* 求拓扑序列，计算数组etv和stack2的值 */ 
-	ltv=(int *)malloc(GL->numVertexes*sizeof(int));/* 事件最晚发生时间数组 */   
+	ltv=(int *)malloc(GL->numVertexes*sizeof(int));/* 事件最早发生时间数组 */   
 	for(i=0; i<GL->numVertexes; i++)        
 		ltv[i]=etv[GL->numVertexes-1];    /* 初始化 */        
 	
